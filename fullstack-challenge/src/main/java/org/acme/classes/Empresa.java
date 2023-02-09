@@ -19,10 +19,27 @@ public class Empresa extends PanacheEntityBase{
     @Column
     private long cep;
 
-    public Object getName() {
-        return null;
+    public String getNome() {
+        return this.nome;
     }
 
-    public void setName(Object name) {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Long getCnpj() {
+        return this.cnpj;
+    }
+
+    public void setCnpj(Long cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public Long getCep() {
+        return this.cep;
+    }
+
+    public void setCep(Long cep) {
+        this.cep = cep;
     }
 }
