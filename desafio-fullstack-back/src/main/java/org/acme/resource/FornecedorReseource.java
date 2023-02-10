@@ -22,7 +22,7 @@ import com.oracle.svm.core.annotate.Inject;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/negocios")
+@Path("/fornecedor")
 public class FornecedorReseource {
 
 @Inject  
