@@ -14,7 +14,6 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
 
-import org.acme.classes.Empresa;
 import org.acme.classes.Fornecedor;
 import org.acme.controller.NegociosController;
 

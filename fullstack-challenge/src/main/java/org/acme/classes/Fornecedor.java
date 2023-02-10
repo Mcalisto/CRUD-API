@@ -46,7 +46,7 @@ public class Fornecedor extends PanacheEntityBase{
     }
 
 
-    public void setCep(Long cep2) {
+    public void setCep(Long cep) {
         this.cep = cep;
     }
 
