@@ -14,7 +14,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
 
-import org.acme.classes.Fornecedor;
+import org.acme.classes.Empresa;
 import org.acme.controller.NegociosController;
 
 import com.oracle.svm.core.annotate.Inject;
@@ -22,49 +22,47 @@ import com.oracle.svm.core.annotate.Inject;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/negocios")
-public class FornecedorReseource {
+@Path("/empresa")
+public class EmpresaResource {
 
 @Inject  
 private NegociosController negociosController;
 
-
 @GET  
-@Path("/fornecedores")
-public List<Fornecedor> fornecedores() {  
-    return Fornecedor.listAll();  
+@Path("/empresas")
+public List<Empresa> empresas() {  
+    return Empresa.listAll();  
 }
 
 @POST  
 @Transactional
-@Path("/inserirfornecedor")  
-public Response createFornecedor(Fornecedor fornecedor) {  
-    Fornecedor.persist(fornecedor);  
-    return Response.ok(fornecedor).status(201).build();  
+@Path("/inserirempresa")  
+public Response createEmpresa(Empresa empresa) {  
+    Empresa.persist(empresa);  
+    return Response.ok(empresa).status(201).build();  
 }
 
-
 @PUT  
-@Path("fornecedore/{id}")  
+@Path("empresa/{id}")  
 @Transactional  
-public Response update(@PathParam("id") Long id, Fornecedor fornecedor) {
+public Response update(@PathParam("id") Long id, Empresa empresa) {
 
-    Fornecedor fornecedorEntity = negociosController.updateFornecedor(id, fornecedor);
+    Empresa empresaEntity = negociosController.updateEmpresa(id, empresa);
 
-    return Response.ok(fornecedorEntity).build();  
+    return Response.ok(empresaEntity).build();  
 }
 
 @DELETE  
 @Path("{id}")  
 @Transactional  
 public Response delete(@PathParam("id") Long id) {  
-    Fornecedor fornecedorEntity = Fornecedor.findById(id);
+    Empresa empresaEntity = Empresa.findById(id);
 
-    if (fornecedorEntity == null) {  
+    if (empresaEntity == null) {  
         throw new WebApplicationException(id + " does not exist.", Response.Status.NOT_FOUND);  
     }
 
-    fornecedorEntity.delete();  
+    empresaEntity.delete();  
     return Response.status(204).build();  
 }  
 
