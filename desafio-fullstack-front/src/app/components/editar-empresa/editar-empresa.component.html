@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+
+.center {
+margin: auto;
+width: 50%;
+padding: 10px;
+text-align: center;
+}
+</style>
+
+<body>
+
+<br>
+<div class="center">
+    <div class="row">
+        <div class="card">
+            <div class="row">
+                <h3 class="text-center"> Editar Empresa </h3>
+                <hr />
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+
+                        <div class="form-group">
+                            <label> Nome Fantasia</label>
+                            <input type="text" class="form-control" id="nome" [(ngModel)]="empresa.nome"
+                                name="nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label>CNPJ</label>
+                            <input type="text" class="form-control" id="cnpj" [(ngModel)]="empresa.cnpj"
+                                name="cnpj">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Cep</label>
+                            <input type="text" class="form-control" id="cep" [(ngModel)]="empresa.cep"
+                                name="cep">
+                        </div>
+
+                        <br />
+                        <button class="btn btn-success" type="submit">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
