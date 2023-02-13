@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { SequenceService } from './sequence.service';
 
-describe('SequenceService', () => {
-  let service: SequenceService;
+import { FornecedorService } from './fornecedor.service';
+
+describe('FornecedorService', () => {
+  let service: FornecedorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SequenceService);
+    service = TestBed.inject(FornecedorService);
   });
 
   it('should be created', () => {

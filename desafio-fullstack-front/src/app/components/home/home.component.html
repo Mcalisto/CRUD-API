@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+
+  .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid gray;
+    padding: 10px;
+    text-align: center;
+  }
+  </style>
+  
+  
+<body>
+
+<br>
+<div class="center">
+  <div class="w3-container" text-align="center">
+    <h2 >Tabelas de Empresas e Fornecedores</h2>
+  </div>
+  
+  <div class="w3-row-padding">
+  
+    <div class=" w3-margin-bottom">
+      <div class = "row">
+        <div class="col-sm-12"><h2> Lista de Empresas</h2></div>
+        <div class="col-sm-1"><input type="button" value="Cadastrar Empresa" class = "btn btn-success" routerLink="empresa" routerLinkActive="active"></div>
+      </div>
+      <br>
+    
+      <table class = "table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th> ID</th>
+                  <th> Nome Fantasia </th>
+                  <th> CNPJ</th>
+                  <th> CEP </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let empresa of empresas" >
+                  <td> {{ empresa.id }} </td>
+                  <td> {{ empresa.nome }} </td>
+                  <td> {{ empresa.cnpj }} </td>
+                  <td> {{ empresa.cep }} </td>
+                  <td>
+                     
+                      <button (click) = "deletarEmpresa(empresa.id)" class = "btn btn-danger" style="margin-left: 10px"> Remover</button>
+                      <button (click) = "editarEmpresa(empresa.id)" class = "btn btn-warning" style="margin-left: 10px"> Editar</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+     </div>
+  </div>
+
+  <div class="w3-row-padding">
+  
+    <div class=" w3-margin-bottom">
+      <div class = "row">
+        <h2> Lista de Fornecedores</h2>
+      </div>
+    
+      <table class = "table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th> ID</th>
+                  <th> Nome Fantasia </th>
+                  <th> CNPJ</th>
+                  <th> CEP </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let fornecedor of fornecedores" >
+                  <td> {{ fornecedor.id }} </td>
+                  <td> {{ fornecedor.nome }} </td>
+                  <td> {{ fornecedor.cnpj }}  / {{ fornecedor.cpf }}</td>
+                  <td> {{ fornecedor.email }} </td>
+                  <td>
+                      <!-- <button (click) = "updateEmployee(employee.id)" class = "btn btn-primary"> Update</button>
+                      <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                      <button (click) = "employeeDetails(employee.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button> -->
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+     </div>
+  </div>
+</div>
+
+</body>
+</html> 

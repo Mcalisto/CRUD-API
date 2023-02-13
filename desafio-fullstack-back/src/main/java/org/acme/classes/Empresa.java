@@ -19,6 +19,10 @@ public class Empresa extends PanacheEntityBase{
     @Column
     private long cep;
 
+    public long getId() {
+        return this.id;
+    }
+
     public String getNome() {
         return this.nome;
     }

@@ -29,7 +29,7 @@ public class EmpresaResource {
 private NegociosController negociosController;
 
 @GET  
-@Path("/empresas")
+@Path("/listaempresas")
 public List<Empresa> empresas() {  
     return Empresa.listAll();  
 }
@@ -37,15 +37,15 @@ public List<Empresa> empresas() {
 @POST  
 @Transactional
 @Path("/inserirempresa")  
-public Response createEmpresa(Empresa empresa) {  
+public Response criarEmpresa(Empresa empresa) {  
     Empresa.persist(empresa);  
     return Response.ok(empresa).status(201).build();  
 }
 
 @PUT  
-@Path("empresa/{id}")  
+@Path("editar/{id}")  
 @Transactional  
-public Response update(@PathParam("id") Long id, Empresa empresa) {
+public Response editar(@PathParam("id") Long id, Empresa empresa) {
 
     Empresa empresaEntity = negociosController.updateEmpresa(id, empresa);
 
@@ -53,9 +53,9 @@ public Response update(@PathParam("id") Long id, Empresa empresa) {
 }
 
 @DELETE  
-@Path("{id}")  
+@Path("deletar/{id}")  
 @Transactional  
-public Response delete(@PathParam("id") Long id) {  
+public Response deletar(@PathParam("id") Long id) {  
     Empresa empresaEntity = Empresa.findById(id);
 
     if (empresaEntity == null) {  
